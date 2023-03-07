@@ -1,19 +1,22 @@
 import axios from 'axios';
 
+const PORT = process.env.PORT || 8080;
+const URL = process.env.RAILWAY_STATIC_URL || 'http://localhost';
+
 export const getAll = async () => 
-    await axios.get('http://localhost:8080/tasks');
+    await axios.get(`${URL}:${PORT}/tasks`);
 
 export const getOne = async id => 
-    await axios.get(`http://localhost:8080/tasks/${id}`);
+    await axios.get(`${URL}:${PORT}/tasks/${id}`);
 
 export const createTask = async data => 
-    await axios.post('http://localhost:8080/tasks', data);
+    await axios.post(`${URL}:${PORT}/tasks`, data);
 
 export const updateTask = async (id, data) => 
-    await axios.put(`http://localhost:8080/tasks/${id}`, data);
+    await axios.put(`${URL}:${PORT}/tasks/${id}`, data);
 
 export const checkTaskDone = async (id, done) => 
-    await axios.put(`http://localhost:8080/tasks/${id}`, { done } );
+    await axios.put(`${URL}:${PORT}/tasks/${id}`, { done } );
 
 export const deleteTask = async id => 
-    await axios.delete(`http://localhost:8080/tasks/${id}`);
+    await axios.delete(`${URL}:${PORT}/tasks/${id}`);
