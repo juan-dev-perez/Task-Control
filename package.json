@@ -9,7 +9,8 @@
   },
   "scripts": {
     "dev": "nodemon Backend/index.js",
-    "start": "node Backend/index.js"
+    "start": "node Backend/index.js",
+    "build:frontend": "cd Frontend && npm run build"
   },
   "keywords": [],
   "author": "",
