@@ -1,4 +1,3 @@
-
 export const dbconfig = {
         database: process.env.DB_NAME || 'tasks',
         username: process.env.DB_USER || 'root',
