@@ -1,22 +1,21 @@
 import axios from 'axios';
 
-// const PORT = process.env.PORT || 8181;
-// const URL = process.env.RAILWAY_STATIC_URL || 'http://localhost';
+const URL = process.env.URL_SERVER || 'http://localhost:8080';
 
 export const getAll = async () => 
-    await axios.get(`https://deploy-tasks-production.up.railway.app/tasks`);
+    await axios.get(`${URL}/tasks`);
 
 export const getOne = async id => 
-    await axios.get(`https://deploy-tasks-production.up.railway.app/tasks/${id}`);
+    await axios.get(`${URL}/tasks/${id}`);
 
 export const createTask = async data => 
-    await axios.post(`https://deploy-tasks-production.up.railway.app/tasks`, data);
+    await axios.post(`${URL}/tasks`, data);
 
 export const updateTask = async (id, data) => 
-    await axios.put(`https://deploy-tasks-production.up.railway.app/tasks/${id}`, data);
+    await axios.put(`${URL}/tasks/${id}`, data);
 
 export const checkTaskDone = async (id, done) => 
-    await axios.put(`https://deploy-tasks-production.up.railway.app/tasks/${id}`, { done } );
+    await axios.put(`${URL}/tasks/${id}`, { done } );
 
 export const deleteTask = async id => 
-    await axios.delete(`https://deploy-tasks-production.up.railway.app/tasks/${id}`);
+    await axios.delete(`${URL}/tasks/${id}`);
